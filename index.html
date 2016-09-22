@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html>
-  <head lang='en' ng-app="clarity">
+<html  ng-app="clarity">
+  <head lang='en'>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -16,16 +16,16 @@
 
     <!-- APPLICATION SCRIPTS -->
     <script src="scripts/app.js"></script>
+    <script src="scripts/directives/quote.js"></script>
+    <script src="scripts/controllers/quoteController.js"></script>
 
   </head>
   <body>
 
     <nav class="navbar navbar-default">
-      <div class="container-fluid">
         <div class="navbar-header">
           <h3 id="logo">clarity</h3>
         </div>
-      </div>
       <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
           <input type="text" class="form-control" name="symbols" value="" placeholder="Search">
@@ -33,10 +33,32 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
     </nav>
+    <div ng-controller="quoteController as quoteCtrl">
+      <div ng-repeat="quote in quoteCtrl.data">
+        <div class="container">
+          <h1>{{quote.name}}</h1>
+          <h4>{{quote.exchange}}</h4>
+          <h4>{{quote.symbol}}</h4>
+          ${{quote.lastPrice}}
+          ${{quote.open}}
+          ${{quote.high}}
+          ${{quote.low}}
+          ${{quote.close}}
+        </div>
+        <hr>
+      </div>
 
-    <div class="container-fluid">
-      <div ng-view></div>
     </div>
+    <!-- <div class="container" ng-controller="quoteController as quoteCtrl">
+      <h1>Stocks</h1>
+      <div class="row">
+        <div ng-repeat="symbol in quoteCtrl.symbols" class="col-md-3">
+          {{symbol}}
+          <quote symbols="{{symbol}}"></quote>
+        </div>
+
+      </div>
+    </div> -->
 
   </body>
 </html>
