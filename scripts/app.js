@@ -1,1 +1,1 @@
-angular.module('clarity', [])
+angular.module('clarity', []);
