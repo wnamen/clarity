@@ -1,3 +1,22 @@
-hello
-
-<div>{{quoteCtrl.quote.results[0].symbol}}</div>
+<div>
+  <div class="container" ng-controller="quoteController as quoteCtrl">
+    <div ng-repeat="quote in quoteCtrl.data">
+      <div class="container-fluid">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+          <h2>{{quote.name}}</h2>
+          <h4>{{quote.symbol}}</h4>
+        </div>
+        <div class="col-md-4">
+          ${{quote.lastPrice}}
+          ${{quote.open}}
+          ${{quote.high}}
+          ${{quote.low}}
+          ${{quote.close}}
+        </div>
+      </div>
+      <hr>
+    </div>
+  </div>
+</div>
