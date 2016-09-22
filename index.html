@@ -33,22 +33,13 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
     </nav>
-    <div ng-controller="quoteController as quoteCtrl">
-      <div ng-repeat="quote in quoteCtrl.data">
-        <div class="container">
-          <h1>{{quote.name}}</h1>
-          <h4>{{quote.exchange}}</h4>
-          <h4>{{quote.symbol}}</h4>
-          ${{quote.lastPrice}}
-          ${{quote.open}}
-          ${{quote.high}}
-          ${{quote.low}}
-          ${{quote.close}}
-        </div>
-        <hr>
+  
+
+        <quote-view></quote-view>
       </div>
 
     </div>
+
     <!-- <div class="container" ng-controller="quoteController as quoteCtrl">
       <h1>Stocks</h1>
       <div class="row">
