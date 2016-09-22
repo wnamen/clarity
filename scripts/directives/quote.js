@@ -1,17 +1,15 @@
 angular.module('clarity')
-  .directive('quote', quote);
+  .directive('quoteView', quoteView);
 
 
-function quote(){
+function quoteView(){
   var directive = {
     restrict: 'E',
     scope: {
       symbols: '@'
     },
     replace: true,
-    templateUrl: '../../templates/quote.html',
-    controller: quoteController,
-    controllerAs: 'quoteCtrl'
+    templateUrl: '../../templates/quote.html'
   }
 
   return directive;
