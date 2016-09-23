@@ -2,15 +2,16 @@
   <div class="container" ng-controller="quoteController as quoteCtrl">
     <div ng-repeat="quote in quoteCtrl.data">
       <div class="container-fluid">
+        <div class="col-md-1 result-container">
+        </div>
         <div class="col-md-2 result-container">
           <img ng-src="{{arrowIndicator(quote.netChange)}}">
         </div>
-        <div class="col-md-2">
+        <div class="col-md-3">
           <h2>{{quote.name}}</h2>
           <h4>{{quote.symbol}}</h4>
         </div>
-        <div class="col-md-1 result-container">
-        </div>
+      
         <div class="col-md-3 result-container">
           <h5 style="{{colorIndicator(quote.netChange)}}">Net Change: {{quote.netChange | number:2}}</h5>
           <h5 style="{{colorIndicator(quote.percentChange)}}">Percent Change: {{quote.percentChange | number:2}}%</h5>

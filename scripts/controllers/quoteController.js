@@ -1,8 +1,8 @@
 angular.module('clarity')
   .controller('quoteController', quoteController);
 
-quoteController.$inject = ['$http', '$scope'];
-function quoteController ($http, $scope){
+quoteController.$inject = ['$http', '$scope', '$route'];
+function quoteController ($http, $scope, $route){
   var vm = this;
   vm.topQuotes = ['aapl','msft','xom','jnj','amzn','fb','brk.b','ge','t','jpm','pg','goog','googl','wfc','vz','pfe','cvx','intc','mrk','ko','bac','cmcsa','v','hd','csco'];
   var url = 'http://marketdata.websol.barchart.com/getQuote.jsonp?key=25df1e65da1e4a624c404c83a2f376ec&mode=R&symbols=';
@@ -13,7 +13,6 @@ function quoteController ($http, $scope){
     url: url + vm.topQuotes + callback
   }).success(function cb(res){
     vm.data = res.results;
-    console.log(vm.data);
   });
 
   $scope.$watch('search', function() {
@@ -28,7 +27,6 @@ function quoteController ($http, $scope){
     }).success(function cb(res){
 
       vm.data = res.results;
-      console.log(vm.data);
     });
   }
 
@@ -36,8 +34,6 @@ function quoteController ($http, $scope){
 
     var positiveColor = "color: green";
     var negativeColor = "color: red";
-
-    console.log();
 
     if (val > 0){
       return positiveColor;
@@ -62,12 +58,14 @@ function quoteController ($http, $scope){
     var positivePricing = "color: green";
     var negativePricing = "color: red";
 
-    console.log();
-
     if (val > key){
       return positivePricing;
     } else {
       return negativePricing;
     }
+  }
+
+  $scope.reloadRoute = function() {
+     $route.reload();
   }
 }

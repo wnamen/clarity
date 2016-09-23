@@ -4,10 +4,16 @@ body {
 
 .navbar {
   background-color: lightblue;
+  margin-bottom: 0;
 }
 
 .navbar-form {
   margin-right: 3px;
+}
+
+#logo-click {
+  text-decoration: none;
+  color: black;
 }
 
 #logo {
