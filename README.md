@@ -2,7 +2,7 @@
 A real-time financial markets application that focuses on a clean and user friendly interface
 
 
-## User Stories 
+## User Stories
 1. User will see a fixed, simple nav bar at the top of the page.
 2. User will see a logo to the left of the nav bar.
 3. User will see a search bar on the right side of the nav bar.

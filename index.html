@@ -8,15 +8,15 @@
 
     <!-- STYLESHEETS -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
 
     <!-- VENDOR SCRIPTS -->
-    <script src="bower_components/angular/angular.min.js"></script>
-    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
 
     <!-- APPLICATION SCRIPTS -->
     <script src="scripts/app.js"></script>
-    <script src="scripts/directives/quote.js"></script>
     <script src="scripts/controllers/quoteController.js"></script>
 
   </head>
@@ -28,28 +28,42 @@
         </div>
       <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
-          <input type="text" class="form-control" name="symbols" value="" placeholder="Search">
+          <input type="text" ng-model="search" ng-model-options="{ debounce: 800 }" class="form-control" placeholder="Search symbols" required>
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
       </form>
     </nav>
-  
 
-        <quote-view></quote-view>
-      </div>
+    <!-- TradingView Widget BEGIN -->
+<div id="tv-medium-widget-ed852"></div>
+<script type="text/javascript" src="https://d33t3vvu2t2yu5.cloudfront.net/tv.js"></script>
+<script type="text/javascript">
+new TradingView.MediumWidget({
+  "container_id": "tv-medium-widget-ed852",
+  "symbols": [
+    [
+      "S&P 500",
+      "SPX|1y"
+    ],
+    [
+      "NASDAQ",
+      "NASDAQ:NDAQ|1y"
+    ]
+  ],
+  "gridLineColor": "#e9e9ea",
+  "fontColor": "#83888D",
+  "underLineColor": "#dbeffb",
+  "trendLineColor": "#4bafe9",
+  "width": "100%",
+  "height": "350px",
+  "tradeItWidget": false,
+  "locale": "en"
+});
+</script>
+<!-- TradingView Widget END -->
 
+    <div id="views">
+      <div ng-view></div>
     </div>
-
-    <!-- <div class="container" ng-controller="quoteController as quoteCtrl">
-      <h1>Stocks</h1>
-      <div class="row">
-        <div ng-repeat="symbol in quoteCtrl.symbols" class="col-md-3">
-          {{symbol}}
-          <quote symbols="{{symbol}}"></quote>
-        </div>
-
-      </div>
-    </div> -->
 
   </body>
 </html>
