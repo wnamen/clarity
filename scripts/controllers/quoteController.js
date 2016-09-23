@@ -31,4 +31,43 @@ function quoteController ($http, $scope){
       console.log(vm.data);
     });
   }
+
+  $scope.colorIndicator = function (val){
+
+    var positiveColor = "color: green";
+    var negativeColor = "color: red";
+
+    console.log();
+
+    if (val > 0){
+      return positiveColor;
+    } else {
+      return negativeColor;
+    }
+  }
+
+  $scope.arrowIndicator = function (val) {
+    var positiveArrow = "../../images/upArrow.jpg";
+    var negativeArrow = "../../images/downArrow.jpg";
+
+    if (val > 0) {
+      return positiveArrow;
+    } else {
+      return negativeArrow;
+    }
+  }
+
+  $scope.pricingIndicator = function (val, key){
+
+    var positivePricing = "color: green";
+    var negativePricing = "color: red";
+
+    console.log();
+
+    if (val > key){
+      return positivePricing;
+    } else {
+      return negativePricing;
+    }
+  }
 }
