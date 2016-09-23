@@ -31,9 +31,13 @@ body {
 
 .pricing {
   list-style: none;
-  margin: 1px;
+  margin: 5px;
 }
 
 #tv-miniwidget-039a9 {
   height: 500px;
+}
+
+img {
+  transform: scaleX(-1) rotate(180deg);
 }

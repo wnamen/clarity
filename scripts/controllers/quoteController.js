@@ -43,8 +43,8 @@ function quoteController ($http, $scope, $route){
   }
 
   $scope.arrowIndicator = function (val) {
-    var positiveArrow = "../../images/upArrow.jpg";
-    var negativeArrow = "../../images/downArrow.jpg";
+    var positiveArrow = "../../images/upArrow.svg";
+    var negativeArrow = "../../images/downArrow.svg";
 
     if (val > 0) {
       return positiveArrow;
