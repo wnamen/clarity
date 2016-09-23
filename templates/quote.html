@@ -2,20 +2,20 @@
   <div class="container" ng-controller="quoteController as quoteCtrl">
     <div ng-repeat="quote in quoteCtrl.data">
       <div class="container-fluid">
-        <div class="col-md-1 result-container">
+        <div class="col-md-2 result-container">
+          <img ng-src="{{arrowIndicator(quote.netChange)}}">
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
           <h2>{{quote.name}}</h2>
           <h4>{{quote.symbol}}</h4>
         </div>
         <div class="col-md-1 result-container">
         </div>
-        <div class="col-md-4 result-container">
-          <h5>Net Change: {{quote.netChange | number:2}}</h5>
-          <h5>Percent Change: {{quote.percentChange | number:2}}%</h5>
+        <div class="col-md-3 result-container">
+          <h5 style="{{colorIndicator(quote.netChange)}}">Net Change: {{quote.netChange | number:2}}</h5>
+          <h5 style="{{colorIndicator(quote.percentChange)}}">Percent Change: {{quote.percentChange | number:2}}%</h5>
         </div>
-        <div class="col-md-1 result-container">
-        </div>
+
         <div class="col-md-1 result-container">
           <li class="pricing">Last:</li>
           <li class="pricing">Open:</li>
@@ -24,11 +24,11 @@
           <li class="pricing">Close:</li>
         </div>
         <div class="col-md-1 result-container">
-          <li class="pricing">${{quote.lastPrice | number:2}}</li>
+          <li class="pricing" style="{{pricingIndicator(quote.lastPrice, quote.open)}}">${{quote.lastPrice | number:2}}</li>
           <li class="pricing">${{quote.open | number:2}}</li>
-          <li class="pricing">${{quote.high | number:2}}</li>
-          <li class="pricing">${{quote.low | number:2}}</li>
-          <li class="pricing">${{quote.close | number:2}}</li>
+          <li class="pricing" style="{{pricingIndicator(quote.high, quote.open)}}">${{quote.high | number:2}}</li>
+          <li class="pricing" style="{{pricingIndicator(quote.low, quote.open)}}">${{quote.low | number:2}}</li>
+          <li class="pricing" style="{{pricingIndicator(quote.close, quote.open)}}">${{quote.close | number:2}}</li>
         </div>
       </div>
       <hr>
