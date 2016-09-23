@@ -23,8 +23,8 @@
   <body>
 
     <nav class="navbar navbar-default">
-        <div class="navbar-header">
-          <a href="http://localhost:9966"><h3 id="logo">clarity</h3></a>
+        <div class="navbar-header" ng-controller="quoteController">
+          <a href="" id="logo-click" ng-click="reloadRoute()"><h3 id="logo">clarity</h3></a>
         </div>
       <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
@@ -47,6 +47,14 @@ new TradingView.MediumWidget({
     [
       "NASDAQ",
       "NASDAQ:NDAQ|1y"
+    ],
+    [
+      "DOW",
+      "DOWI|1y"
+    ],
+    [
+      "Nikkei",
+      "INDEX:NKY|1y"
     ]
   ],
   "gridLineColor": "#e9e9ea",
