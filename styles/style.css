@@ -1,7 +1,33 @@
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+
 .navbar {
   background-color: lightblue;
 }
 
+.navbar-form {
+  margin-right: 3px;
+}
+
 #logo {
   margin-top: 10px;
+  margin-left: 10px;
+}
+
+.logo-href {
+  display: none;
+}
+
+.result-container {
+  margin-top: 25px;
+}
+
+.pricing {
+  list-style: none;
+  margin: 1px;
+}
+
+#tv-miniwidget-039a9 {
+  height: 500px;
 }
