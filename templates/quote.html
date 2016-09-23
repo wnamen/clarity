@@ -11,7 +11,7 @@
           <h2>{{quote.name}}</h2>
           <h4>{{quote.symbol}}</h4>
         </div>
-      
+
         <div class="col-md-3 result-container">
           <h5 style="{{colorIndicator(quote.netChange)}}">Net Change: {{quote.netChange | number:2}}</h5>
           <h5 style="{{colorIndicator(quote.percentChange)}}">Percent Change: {{quote.percentChange | number:2}}%</h5>
@@ -22,14 +22,14 @@
           <li class="pricing">Open:</li>
           <li class="pricing">High:</li>
           <li class="pricing">Low:</li>
-          <li class="pricing">Close:</li>
+          <li class="pricing" ng-show="quote.close">Close:</li>
         </div>
         <div class="col-md-1 result-container">
           <li class="pricing" style="{{pricingIndicator(quote.lastPrice, quote.open)}}">${{quote.lastPrice | number:2}}</li>
           <li class="pricing">${{quote.open | number:2}}</li>
           <li class="pricing" style="{{pricingIndicator(quote.high, quote.open)}}">${{quote.high | number:2}}</li>
           <li class="pricing" style="{{pricingIndicator(quote.low, quote.open)}}">${{quote.low | number:2}}</li>
-          <li class="pricing" style="{{pricingIndicator(quote.close, quote.open)}}">${{quote.close | number:2}}</li>
+          <li class="pricing" style="{{pricingIndicator(quote.close, quote.open)}}" ng-show="quote.close">${{quote.close | number:2}}</li>
         </div>
       </div>
       <hr>
