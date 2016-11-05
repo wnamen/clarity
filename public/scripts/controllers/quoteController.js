@@ -5,7 +5,7 @@ quoteController.$inject = ['$http', '$scope', '$route'];
 function quoteController ($http, $scope, $route){
   var vm = this;
   vm.topQuotes = ['aapl','msft','xom','jnj','amzn','fb','brk.b','ge','t','jpm','pg','goog','googl','wfc','vz','pfe','cvx','intc','mrk','ko','bac','cmcsa','v','hd','csco'];
-  var url = 'http://marketdata.websol.barchart.com/getQuote.jsonp?key=25df1e65da1e4a624c404c83a2f376ec&mode=R&symbols=';
+  var url = 'https://marketdata.websol.barchart.com/getQuote.jsonp?key=25df1e65da1e4a624c404c83a2f376ec&mode=R&symbols=';
   var callback = '&callback=JSON_CALLBACK';
 
   $http({
