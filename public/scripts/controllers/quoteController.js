@@ -16,8 +16,10 @@ function quoteController ($http, $scope, $route){
   });
 
   $scope.$watch('search', function() {
-    vm.search = $scope.search;
-    searchQuote();
+    if ($scope.$watch !== undefined) {
+      vm.search = $scope.search;
+      searchQuote();
+    }
   });
 
   function searchQuote(){

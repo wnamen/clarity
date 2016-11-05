@@ -1,0 +1,23 @@
+{
+  "name": "clarity",
+  "version": "1.0.0",
+  "description": "A real-time financial markets application that focuses on a clean and user friendly interface",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wnamen/clarity.git"
+  },
+  "author": "William Namen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wnamen/clarity/issues"
+  },
+  "homepage": "https://github.com/wnamen/clarity#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
