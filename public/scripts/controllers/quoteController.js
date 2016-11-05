@@ -16,7 +16,7 @@ function quoteController ($http, $scope, $route){
   });
 
   $scope.$watch('search', function() {
-    if ($scope.$watch !== undefined) {
+    if ($scope.$watch === undefined) {
       vm.search = $scope.search;
       searchQuote();
     }
