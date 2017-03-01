@@ -4,32 +4,30 @@ angular.module('clarity')
 quoteController.$inject = ['$http', '$scope', '$route'];
 function quoteController ($http, $scope, $route){
   var vm = this;
+
   vm.topQuotes = ['aapl','msft','xom','jnj','amzn','fb','brk.b','ge','t','jpm','pg','goog','googl','wfc','vz','pfe','cvx','intc','mrk','ko','bac','cmcsa','v','hd','csco'];
-  var url = 'https://marketdata.websol.barchart.com/getQuote.jsonp?key=25df1e65da1e4a624c404c83a2f376ec&mode=R&symbols=';
+  var url = 'http://marketdata.websol.barchart.com/getQuote.jsonp?key=25df1e65da1e4a624c404c83a2f376ec&mode=R&symbols=';
   var callback = '&callback=JSON_CALLBACK';
 
   $http({
     method: 'JSONP',
     url: url + vm.topQuotes + callback
-  }).success(function cb(res){
+  }).success(function(res){
     vm.data = res.results;
   });
 
-  $scope.$watch('search', function() {
-    if ($scope.$watch === undefined) {
-      console.log("empty search");
-    } else {
-      vm.search = $scope.search;
-      searchQuote();
-    }
-  });
+  // $scope.$watch('search', function() {
+  //   vm.search = $scope.search;
+  //   searchQuote();
+  // });
 
-  function searchQuote(){
+  $scope.searchQuote = function(){
+    vm.search = $scope.search
+
     $http({
       method: 'JSONP',
       url: url + vm.search + callback
-    }).success(function cb(res){
-
+    }).success(function(res){
       vm.data = res.results;
     });
   }
