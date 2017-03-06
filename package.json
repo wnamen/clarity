@@ -1,23 +1,21 @@
 {
   "name": "clarity",
-  "version": "1.0.0",
-  "description": "A real-time financial markets application that focuses on a clean and user friendly interface",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "react-scripts": "0.9.3"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wnamen/clarity.git"
-  },
-  "author": "William Namen",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/wnamen/clarity/issues"
-  },
-  "homepage": "https://github.com/wnamen/clarity#readme",
   "dependencies": {
-    "express": "^4.14.0"
+    "axios": "^0.15.3",
+    "material-ui": "^0.17.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-tap-event-plugin": "^2.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   }
 }

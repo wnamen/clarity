@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+
+.paperContainer {
+  height: 25vh;
+  margin: 15px 40px 15px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-family:'Ubuntu', sans-serif;
+}
